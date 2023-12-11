@@ -23,7 +23,7 @@ function HomeScreen({ navigation }) {
         title="Go to Próba"
       />
       <Button
-        onPress={() => navigation.navigate('Próba2')}
+        onPress={() => navigation.navigate('Getes')}
         title="Getes screen megnyitása"
       />
       <Button
