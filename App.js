@@ -6,9 +6,10 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Proba from "./Proba";
 import Getes from "./Getes";
 import Lenyilo from "./Lenyilo";
-import Kepfeltoltes from "./Kepfeltoltes";
-import Felvitel from "./Felvitel"
-
+import Felvitel from "./Felvitel";
+import Getesorokbefogadas from "./Getesorokbefogadas";
+import Kozosscreen from './Kozosscreen';
+import Ujlap from "./Ujlap"
 
 
 function HomeScreen({ navigation }) {
@@ -46,14 +47,14 @@ function NotificationsScreen({ navigation }) {
   );
 }
 
-function probaScreen({ navigation }){
+/*function probaScreen({ navigation }){
   return(
     
     <Proba/>
 
   );
 }
-
+*/
 function GetesScreen ({ navigation})
 {
   return(
@@ -72,11 +73,20 @@ function LenyiloScreen ({ navigation})
   );
 }
 
-function kepfeltoltes ({ navigation})
+/*function kepfeltoltes ({ navigation})
 {
   return(
 
     <Kepfeltoltes/>
+    
+  );
+}
+*/
+function Orokbefogadastabla ({ navigation})
+{
+  return(
+
+    <Getesorokbefogadas/>
     
   );
 }
@@ -95,11 +105,11 @@ function Root ({ navigation})
       <Drawer.Navigator initialRouteName="Home">
         <Drawer.Screen name="Home" component={HomeScreen} />
         <Drawer.Screen name="Notifications" component={NotificationsScreen} />
-        <Drawer.Screen name='Próba' component={probaScreen}/>
         <Drawer.Screen name='Getes' component={GetesScreen}/>
         <Drawer.Screen name='Lenyilo' component={LenyiloScreen}/>
-        <Drawer.Screen name='Kepfeltoltes' component={kepfeltoltes}/>
         <Drawer.Screen name='Felvitel' component={Felvitel}/>
+        <Drawer.Screen name='Getesorokbefogadas' component={Orokbefogadastabla}/>
+        <Drawer.Screen name='Kozosscreen' component={Kozosscreen}/>
       </Drawer.Navigator>
   );
 }
@@ -114,6 +124,7 @@ export default function App() {
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="Root" component={Root} options={{headerShown:false}} />
         <Stack.Screen name="Proba" component={Proba} />
+        <Stack.Screen name="Ujlap" component={Ujlap} />
       </Stack.Navigator>
 
     </NavigationContainer>
