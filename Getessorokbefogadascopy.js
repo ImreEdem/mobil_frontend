@@ -1,9 +1,8 @@
 import React, {useEffect, useState} from 'react';
-import {ActivityIndicator, FlatList, Text, View,Button} from 'react-native';
+import {ActivityIndicator, FlatList, Text, View, Image,Button} from 'react-native';
 import Ipcim from './Ipcim';
 
-
-const Getesorokbefogadas = ({ navigation }) => {
+const App = () => {
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
 
@@ -33,13 +32,9 @@ const Getesorokbefogadas = ({ navigation }) => {
           keyExtractor={({id}) => id}
           renderItem={({item}) => (
             <View>
-            <Text style={{textAlign:'center',fontSize:30}}>
-              {item.felhasznalo_teljesnev}
-            </Text>
-            <View style={{width:200,marginLeft:80,marginRight:80}}>
-                <Button  onPress={() => navigation.navigate('Ujlapfelhasznalo', {atkuld11:item.felhasznalok_id,atkuld12:item.felhasznalo_teljesnev})} title="Felhasznalo megtekíntése" />
-            </View>
-
+                <Text>
+                    {item.felhasznalo_teljesnev},  {item.orokbefogado},  {item.orokbeado}
+                </Text>
                 
                 
              
@@ -53,4 +48,4 @@ const Getesorokbefogadas = ({ navigation }) => {
   );
 };
 
-export default Getesorokbefogadas;
+export default App;

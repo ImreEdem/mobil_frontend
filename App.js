@@ -9,7 +9,9 @@ import Lenyilo from "./Lenyilo";
 import Felvitel from "./Felvitel";
 import Getesorokbefogadas from "./Getesorokbefogadas";
 import Kozosscreen from './Kozosscreen';
-import Ujlap from "./Ujlap"
+import Ujlap from "./Ujlap";
+import Video from "./Video";
+import Ujlapfelhasznalo from "./Ujlapfelhasznalo";
 
 
 function HomeScreen({ navigation }) {
@@ -82,14 +84,7 @@ function LenyiloScreen ({ navigation})
   );
 }
 */
-function Orokbefogadastabla ({ navigation})
-{
-  return(
 
-    <Getesorokbefogadas/>
-    
-  );
-}
 
 
 
@@ -108,8 +103,9 @@ function Root ({ navigation})
         <Drawer.Screen name='Getes' component={GetesScreen}/>
         <Drawer.Screen name='Lenyilo' component={LenyiloScreen}/>
         <Drawer.Screen name='Felvitel' component={Felvitel}/>
-        <Drawer.Screen name='Getesorokbefogadas' component={Orokbefogadastabla}/>
         <Drawer.Screen name='Kozosscreen' component={Kozosscreen}/>
+        <Drawer.Screen name='Getesorokbefogadas' component={Getesorokbefogadas}/>
+        <Drawer.Screen name='Video' component={Video}/>
       </Drawer.Navigator>
   );
 }
@@ -125,6 +121,7 @@ export default function App() {
         <Stack.Screen name="Root" component={Root} options={{headerShown:false}} />
         <Stack.Screen name="Proba" component={Proba} />
         <Stack.Screen name="Ujlap" component={Ujlap} />
+        <Stack.Screen name="Ujlapfelhasznalo" component={Ujlapfelhasznalo} />
       </Stack.Navigator>
 
     </NavigationContainer>
