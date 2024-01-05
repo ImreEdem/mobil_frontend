@@ -9,7 +9,7 @@ const Getesorokbefogadas = ({ navigation }) => {
 
   const getMovies = async () => {
     try {
-      const response = await fetch(Ipcim.Ipcim+'orokbefogad');
+      const response = await fetch(Ipcim.Ipcim+'lenyilolista2');
       const json = await response.json();
       setData(json);
     } catch (error) {

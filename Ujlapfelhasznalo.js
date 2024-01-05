@@ -40,13 +40,14 @@ const Ujlapfelhasznalo = ({route, navigation}) => {
     {isLoading ? (
       <ActivityIndicator />
     ) : (
-      <FlatList
+      <View>
+      {data.length ? <FlatList
         data={data}
         keyExtractor={({id}) => id}
         renderItem={({item}) => (
             <View>
                 <Text>
-                {item.felhasznalo_nev},{' '}
+                {item.felhasznalo_teljesnev},
                 {item.orokbefogado === 1 && item.orokbeado !== 1
                       ? 'Örökbe fogadó'
                       : item.orokbeado === 1 && item.orokbefogado !== 1
@@ -58,14 +59,7 @@ const Ujlapfelhasznalo = ({route, navigation}) => {
 
                 {item.felhasznalo_email}, {item.felhasznalo_telefon}
                 
-                {item.felhasznalo_commentiras === "" && item.felhasznalo_commentetkapott !== ""
-                      ? item.felhasznalo_commentetkapott
-                      : item.felhasznalo_commentetkapott === "" && item.felhasznalo_commentiras !== ""
-                      ? item.felhasznalo_commentiras
-                      : item.felhasznalo_commentetkapott === "" && item.felhasznalo_commentiras === ""
-                      ? ''
-                      : ''
-                    }
+                
                 </Text>
                 
 
@@ -74,9 +68,13 @@ const Ujlapfelhasznalo = ({route, navigation}) => {
           
           
         )}
-      />
+      /> : <Text>Nincs örökbefogadása</Text>}
+
       
-    )}
+      </View>
+    )
+    }
+    
     <Button onPress={() => navigation.navigate('Getesorokbefogadas')} title="Vissza a választó felületre!" />  
   </View>
   );
