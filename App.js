@@ -17,6 +17,9 @@ import Ujlapfelhasznalo from "./Ujlapfelhasznalo";
 function HomeScreen({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <View style={{height:400,width:390}}>
+        <Video/>
+      </View>
       <Button
         onPress={() => navigation.navigate('Notifications')}
         title="Go to notifications"

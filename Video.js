@@ -23,27 +23,15 @@ const Video = () => {
   }, []);
 
   return (
-    <View style={{flex: 1, padding: 24}}>
-
-
-        <WebView source={{ uri: 'https://www.youtube.com/embed/JjmVg24EYeU?si=SwHl0Ix6EVp5VjdQ' }}
-        style={{ flex: 1 }} />
-
-
-
+    <View style={{flex: 1}}>
       {isLoading ? (
         <ActivityIndicator />
       ) : (
-        <FlatList
-          data={data}
-          keyExtractor={({id}) => id}
-          renderItem={({item}) => (
-            <Text>
-              {item.title}, {item.releaseYear}
-            </Text>
-          )}
-        />
+        <Text style={{textAlign:'center'}}>Szia cica van gazdád?</Text>
       )}
+
+      <WebView source={{ uri: 'https://www.youtube.com/embed/JjmVg24EYeU?si=SwHl0Ix6EVp5VjdQ' }}
+         />
     </View>
   );
 };
