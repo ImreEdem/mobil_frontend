@@ -31,11 +31,13 @@ const Kozosscreen= ({navigation}) => {
           data={data}
           keyExtractor={({id}) => id}
           renderItem={({item}) => (
-            <View>
-            <Text style={{textAlign:'center',fontSize:30}}>
-              {item.telepules_nev}
-            </Text>
-            <View style={{width:100,marginLeft:125,marginRight:125}}>
+            <View style={{flexDirection:'row'}}>
+              <View style={{flex:3}}>
+                <Text style={{textAlign:'center',fontSize:30}}>
+                  {item.telepules_nev}
+                </Text>
+              </View>
+            <View style={{flex:3}}>
                 <Button  onPress={() => navigation.navigate('Ujlap', {atkuld1:item.telepules_id,atkuld2:item.telepules_nev})} title="Részletek" />
             </View>
             
