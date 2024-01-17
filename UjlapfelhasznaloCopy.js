@@ -41,25 +41,34 @@ const Ujlapfelhasznalo = ({route, navigation}) => {
       <ActivityIndicator />
     ) : (
       <View>
-      <FlatList
+      {data.length ? <FlatList
         data={data}
         keyExtractor={({id}) => id}
         renderItem={({item}) => (
             <View>
-                {item.felhasznalok_id === item.ofelhasznalo_id ?  
-                  <Text>
-                    {item.felhasznalo_teljesnev},{item.felhasznalo_email}, {item.felhasznalo_telefon},{item.orokbefogadas_allatid},{item.orokbefogadas_datum}
-                  </Text>
-                 :
-                  <Text>  
-                    {item.felhasznalo_teljesnev},{item.felhasznalo_email},{item.felhasznalo_telefon}
-                  </Text>
-                  }
+                <Text>
+                {item.felhasznalo_teljesnev},
+                {item.orokbefogado === 1 && item.orokbeado !== 1
+                      ? 'Örökbe fogadó'
+                      : item.orokbeado === 1 && item.orokbefogado !== 1
+                      ? 'Örökbe adó'
+                      : item.orokbefogado === 1 && item.orokbeado === 1
+                      ? 'Örökbe fogadó és Örökbe adó'
+                      : ''
+                    },
+
+                {item.felhasznalo_email}, {item.felhasznalo_telefon}
+                
+                
+                </Text>
+                
+
+                
             </View>
           
           
         )}
-      />
+      /> : <Text>Nincs örökbefogadása</Text>}
 
       
       </View>

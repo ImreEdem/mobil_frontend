@@ -30,6 +30,7 @@ export default function ImagePickerExample() {
     getMovies();
   }, []);
 
+
   
   const createFormData = (photo, body = {}) => {
     const data = new FormData();
@@ -56,7 +57,7 @@ export default function ImagePickerExample() {
 
       const response = await fetch(`${SERVER_URL}api/upload`, {
         method: 'POST',
-        body: createFormData(image,{ bevitel1,bevitel2,bevitel3,bevitel4,selectedTelepules }),
+        body: createFormData(image,{ bevitel1,bevitel2,bevitel3,bevitel4,selectedTelepules}),
 
         headers: {
           'Content-Type': 'multipart/form-data',
@@ -73,6 +74,10 @@ export default function ImagePickerExample() {
       console.log('error', error.message);
     }
   };
+
+
+
+
 
   const pickImage = async () => {
     let result = await ImagePicker.launchImageLibraryAsync({

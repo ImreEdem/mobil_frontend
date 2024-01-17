@@ -20,76 +20,10 @@ function HomeScreen({ navigation }) {
       <View style={{height:400,width:390}}>
         <Video/>
       </View>
-      <Button
-        onPress={() => navigation.navigate('Notifications')}
-        title="Go to notifications"
-      />
-      <Button
-        onPress={() => navigation.navigate('Próba')}
-        title="Go to Próba"
-      />
-      <Button
-        onPress={() => navigation.navigate('Getes')}
-        title="Getes screen megnyitása"
-      />
-      <Button
-        onPress={() => navigation.navigate('Lenyilo')}
-        title="Go to Lenyilo"
-      />
-      <Button
-        onPress={() => navigation.navigate('Proba')}
-        title="Proba screen meghívása"
-      />
+      
     </View>
   );
 }
-
-function NotificationsScreen({ navigation }) {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Button onPress={() => navigation.goBack()} title="Go back home" />
-    </View>
-  );
-}
-
-/*function probaScreen({ navigation }){
-  return(
-    
-    <Proba/>
-
-  );
-}
-*/
-function GetesScreen ({ navigation})
-{
-  return(
-
-    <Getes/>
-    
-  );
-}
-
-function LenyiloScreen ({ navigation})
-{
-  return(
-
-    <Lenyilo/>
-    
-  );
-}
-
-/*function kepfeltoltes ({ navigation})
-{
-  return(
-
-    <Kepfeltoltes/>
-    
-  );
-}
-*/
-
-
-
 
 
 
@@ -102,13 +36,9 @@ function Root ({ navigation})
 
       <Drawer.Navigator initialRouteName="Home">
         <Drawer.Screen name="Home" component={HomeScreen} />
-        <Drawer.Screen name="Notifications" component={NotificationsScreen} />
-        <Drawer.Screen name='Getes' component={GetesScreen}/>
-        <Drawer.Screen name='Lenyilo' component={LenyiloScreen}/>
         <Drawer.Screen name='Felvitel' component={Felvitel}/>
         <Drawer.Screen name='Kozosscreen' component={Kozosscreen}/>
         <Drawer.Screen name='Getesorokbefogadas' component={Getesorokbefogadas}/>
-        <Drawer.Screen name='Video' component={Video}/>
       </Drawer.Navigator>
   );
 }
@@ -122,7 +52,6 @@ export default function App() {
 
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="Root" component={Root} options={{headerShown:false}} />
-        <Stack.Screen name="Proba" component={Proba} />
         <Stack.Screen name="Ujlap" component={Ujlap} />
         <Stack.Screen name="Ujlapfelhasznalo" component={Ujlapfelhasznalo} />
       </Stack.Navigator>
