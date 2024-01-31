@@ -6,6 +6,7 @@ const Ujlapfelhasznalo = ({route, navigation}) => {
     const [isLoading, setLoading] = useState(true);
     const [data, setData] = useState([]);
     const {atkuld11,atkuld12} =route.params
+    const [felulnev, setFelulnev] = useState([]);
 
 
     const getMovies = async () => {
@@ -21,6 +22,7 @@ const Ujlapfelhasznalo = ({route, navigation}) => {
           })
           const json = await response.json();
           setData(json);
+          setFelulnev(json[0].felhasznalo_teljesnev)
         } catch (error) {
           console.error(error);
         } finally {
@@ -41,20 +43,18 @@ const Ujlapfelhasznalo = ({route, navigation}) => {
       <ActivityIndicator />
     ) : (
       <View>
+        <Text>
+          {felulnev}
+        </Text>
       <FlatList
         data={data}
         keyExtractor={({id}) => id}
         renderItem={({item}) => (
             <View>
-                {item.felhasznalok_id === item.ofelhasznalo_id ?  
                   <Text>
-                    {item.felhasznalo_teljesnev},{item.felhasznalo_email}, {item.felhasznalo_telefon},{item.orokbefogadas_allatid},{item.orokbefogadas_datum}
+                    {item.felhasznalo_teljesnev},{item.felhasznalo_email}, {item.felhasznalo_telefon}
                   </Text>
-                 :
-                  <Text>  
-                    {item.felhasznalo_teljesnev},{item.felhasznalo_email},{item.felhasznalo_telefon}
-                  </Text>
-                  }
+                
             </View>
           
           
