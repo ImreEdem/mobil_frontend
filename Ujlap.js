@@ -36,7 +36,7 @@ const Ujlap = ({route, navigation}) => {
     
 
   return (
-    <View style={{flex: 1, padding: 10}}>
+    <View style={{flex: 1, padding: 24}}>
     {isLoading ? (
       <ActivityIndicator />
     ) : (
