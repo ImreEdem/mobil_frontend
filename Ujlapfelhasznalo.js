@@ -106,7 +106,7 @@ const Ujlapfelhasznalo = ({route, navigation}) => {
                     {item.allatok_orokbefogadas === 0    ?
                     <Button onPress={() => navigation.navigate('Orokbefogadasfelulet', {atkuld21:item.allatok_id,atkuld22:item.allatok_nev})} title="Örökbefogadás!"/>
                     : 
-                    "" 
+                    <Button onPress={() => navigation.navigate('Orokbefogadasfelulet', {atkuld21:item.allatok_id,atkuld22:item.allatok_nev})} title="Örökbefogadás!" />
                     }
                   </View>
                   
