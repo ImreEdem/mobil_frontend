@@ -1,5 +1,5 @@
 import React, { useEffect, useState} from 'react';
-import { Button, Image, View, Text, TextInput } from 'react-native';
+import { Button, Image, View, Text, TextInput, Platform } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
 import {Picker} from '@react-native-picker/picker';
 import Ipcim from './Ipcim';

@@ -77,7 +77,7 @@ const Ujlapfelhasznalo = ({route, navigation}) => {
         </View>
         </View>
 
-        
+              
 
       <FlatList
         data={data}
@@ -102,6 +102,13 @@ const Ujlapfelhasznalo = ({route, navigation}) => {
                     {item.orokbefogadas_datum}
                   </Text>
                   </View>
+                  <View>
+                    {item.allatok_orokbefogadas === 0    ?
+                    <Button onPress={() => navigation.navigate('Orokbefogadasfelulet', {atkuld21:item.felhasznalok_id,atkuld22:item.allatok_nev})} title="Örökbefogadás!"/>
+                    : 
+                    "" 
+                    }
+                  </View>
                   
                   
                 
@@ -116,7 +123,7 @@ const Ujlapfelhasznalo = ({route, navigation}) => {
     )
     }
     
-    <Button onPress={() => navigation.navigate('Getesorokbefogadas')} title="Vissza a választó felületre!"  />  
+    <Button onPress={() => navigation.navigate('Getesorokbefogadas')} title="Vissza a profilokhoz"/>  
   </View>
   );
 };
